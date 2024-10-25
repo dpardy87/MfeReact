@@ -1,3 +1,37 @@
-export default function Root(props) {
-  return <section>{props.name} is mounted</section>;
-}
+import React, { useEffect, useState } from 'react';
+import { getMessages, sendMessage } from '../../util/src';
+
+const App2 = () => {
+  const [receivedMessages, setReceivedMessages] = useState([]);
+
+  useEffect(() => {
+    const subscription = getMessages().subscribe((message) => {
+      if (message.from === 'app2') { // Only display messages sent from App 1
+        setReceivedMessages((prevMessages) => [...prevMessages, message.message]);
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSendMessage = () => {
+    const message = `Hello from app 2 ${new Date().toString()}`;
+    sendMessage({ from: 'app2', message });
+  };
+
+  return (
+    <div>
+      <h1>App 2</h1>
+      <button onClick={handleSendMessage}>Send to App 1</button>
+      <div>
+        <h2>Messages from App 1:</h2>
+        <ul>
+          {receivedMessages.map((msg, index) => (
+            <li key={index}>{msg}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default App2;
