@@ -1,0 +1,15 @@
+<style>
+  .app-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+  }
+</style>
+
+<single-spa-router>
+  <div class="app-container">
+    test
+    <application name="@org/app1" class="app1"></application>
+    <application name="@org/app2" class="app2"></application>
+  </div>
+</single-spa-router>
