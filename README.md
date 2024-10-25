@@ -13,3 +13,4 @@ npm start -- --port=9001
 npm start -- --port=9002
 ```
 
+Visit [http://localhost:9000](http://localhost:9000) to see MFE in action.
