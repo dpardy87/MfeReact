@@ -1,6 +1,6 @@
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react");
-
+const path = require('path');
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "org",
@@ -10,11 +10,11 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    devServer: {
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-  },
-  port: 9001, // Use 9002 for app2
-},
+    resolve: {
+      modules: [
+        path.resolve(__dirname, '../node_modules'), // Parent node_modules directory
+        'node_modules' // Local node_modules as fallback
+      ]
+    },
   });
 };

@@ -20,23 +20,32 @@
   <% } %>
    <template id="single-spa-layout">
     <single-spa-router>
-      <div class="main-content mt-16">
-        <route path="/app1">
+  <div class="main-content mt-16">
+    <route path="/app1">
+      <application name="@org/app1"></application>
+    </route>
+    <route path="/app2">
+      <application name="@org/app2"></application>
+    </route>
+    <route default>
+      <div class="flex flex-row justify-between p-16 gap-4">
+        
+        <div class="w-1/2 flex justify-center border-r pr-4">
+          <h1 class="text-lg font-bold mb-4">App 1</h1>
           <application name="@org/app1"></application>
-        </route>
-        <route path="/app2">
+        </div>
+
+        
+        <div class="w-1/2 flex justify-center pl-4">
+          <h1 class="text-lg font-bold mb-4">App 2</h1>
           <application name="@org/app2"></application>
-        </route>
-        <route default>
-          <h1 class="flex flex-row justify-center p-16">
-            <p class="max-w-md">testing root-config</p>
-            <application name="@org/app1"></application>
-            <application name="@org/app2"></application>
-            <hr/>
-          </h1>
-        </route>
+        </div>
       </div>
-    </single-spa-router>
+    </route>
+  </div>
+</single-spa-router>
+
+
   </template>
 </head>
 <body></body>
