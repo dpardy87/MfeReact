@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getMessages, sendMessage } from 'dp-utility-module';
 
-const App1 = () => {
+const App2 = () => {
   const [receivedMessage, setReceivedMessage] = useState('');
 
   useEffect(() => {
@@ -25,4 +25,4 @@ const App1 = () => {
   );
 };
 
-export default App1;
+export default App2;

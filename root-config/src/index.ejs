@@ -18,6 +18,26 @@
     }
   </script>
   <% } %>
+   <template id="single-spa-layout">
+    <single-spa-router>
+      <div class="main-content mt-16">
+        <route path="/app1">
+          <application name="@org/app1"></application>
+        </route>
+        <route path="/app2">
+          <application name="@org/app2"></application>
+        </route>
+        <route default>
+          <h1 class="flex flex-row justify-center p-16">
+            <p class="max-w-md">testing root-config</p>
+            <application name="@org/app1"></application>
+            <application name="@org/app2"></application>
+            <hr/>
+          </h1>
+        </route>
+      </div>
+    </single-spa-router>
+  </template>
 </head>
 <body></body>
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@4.1.0/dist/import-map-overrides.js"></script>
