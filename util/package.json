@@ -4,6 +4,8 @@
   "description": "module using RxJS",
   "main": "src/index.js",
   "dependencies": {
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "react": "^17.0.2",         
+    "@babel/runtime": "^7.23.3"
   }
 }
