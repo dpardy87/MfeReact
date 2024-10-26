@@ -1,16 +1,10 @@
 # MfeReact
 
-#### run the following commands in 3 terminal tabs for the time-being (will be replaced with Dockerfiles->docker-compose)
+#### Run the following command to spin up the app locally
 
 ```bash
-# root-config
-npm start -- --port=9000
-
-# app1
-npm start -- --port=9001
-
-# app2
-npm start -- --port=9002
+# from root
+docker-compose up --build'
 ```
 
 Visit [http://localhost:9000](http://localhost:9000) to see MFE in action.

@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  root-config:
+    build:
+      context: ./root-config
+    ports:
+      - "9000:9000"
+    depends_on:
+      - util
+    volumes:
+      - ./root-config:/usr/src/app
+
+  app1:
+    build:
+      context: ./app1
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./app1:/usr/src/app
+      - ./util:/usr/src/util
+
+  app2:
+    build:
+      context: ./app2
+    ports:
+      - "9002:9002"
+    volumes:
+      - ./app2:/usr/src/app
+      - ./util:/usr/src/util 
+
+  util:
+    build:
+      context: ./util
+    volumes:
+      - ./util:/usr/src/util
