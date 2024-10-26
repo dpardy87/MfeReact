@@ -6,7 +6,7 @@ const App1 = () => {
 
   useEffect(() => {
     const subscription = getMessages().subscribe((message) => {
-      if (message.from === 'app1') { // Only display messages sent from App 2
+      if (message.from === 'app2') {
         setReceivedMessages((prevMessages) => [...prevMessages, message.message]);
       }
     });

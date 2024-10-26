@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { getMessages, sendMessage } from '../../util/src';
+import { getMessages, sendMessage } from '../../util';
 
 const App2 = () => {
   const [receivedMessages, setReceivedMessages] = useState([]);
 
   useEffect(() => {
     const subscription = getMessages().subscribe((message) => {
-      if (message.from === 'app2') { // Only display messages sent from App 1
+      if (message.from === 'app1') {
         setReceivedMessages((prevMessages) => [...prevMessages, message.message]);
       }
     });

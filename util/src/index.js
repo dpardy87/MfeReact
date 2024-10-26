@@ -2,14 +2,16 @@
 const { Subject } = require('rxjs');
 
 // Define the event bus
-const eventBus = new Subject();
+const eventBus = window.eventBus || new Subject();
+window.eventBus = eventBus;
 
 // Function to send a message
 const sendMessage = (message) => {
   eventBus.next(message);
 };
 
-// Function to get messages as an observable
-const getMessages = () => eventBus.asObservable();
+const getMessages = () => {
+  return eventBus.asObservable();
+}
 
 module.exports = { sendMessage, getMessages };
