@@ -4,7 +4,7 @@
 
 ```bash
 # from root
-docker-compose up --build'
+make build
 ```
 
 Visit [http://localhost:9000](http://localhost:9000) to see MFE in action.
