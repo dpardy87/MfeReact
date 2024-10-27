@@ -20,7 +20,7 @@ const MessageComponent = ({ appName, targetApp }) => {
 
   return (
     <div>
-      <h1>{appName}</h1>
+      <h1>{appName} is mounted!</h1>
       <button onClick={handleSendMessage}>Send to {targetApp}</button>
       <div>
         <h2>Messages from {targetApp}:</h2>
